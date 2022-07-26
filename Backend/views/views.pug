@@ -1,0 +1,26 @@
+doctype html 
+html
+    head
+        title Home page
+        
+    body 
+        h1 Your entries: 
+        - var n=0; //variable will show the number of items present in the database. 
+        table                          
+
+            tr 
+                th #
+                th Title 
+                th Option
+                
+                for data in item
+                    - n++
+                    tr
+                        td= n
+                        td 
+                            a(href=`/read/${data.id}`)=data.title
+                        td
+                            a(href=`/update/${data.id}`) Update
+                            a(href=`/delete/${data.id}`) Delete
+    br
+    a(href="/create") Create note  
